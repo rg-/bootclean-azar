@@ -4,7 +4,7 @@
 
 	Bootclean child custom functions 
 
-*/
+*/ 
 
 /*
 Enable Theme Settings Page
@@ -20,6 +20,7 @@ include('functions/theme-customs.php');
 /* general options/settings */
 include('functions/theme-textdomain.php');
 include('functions/theme-login.php'); 
+include('functions/theme-users.php'); 
 include('functions/theme-under-construction.php'); 
 include('functions/theme-options.php');
 include('functions/theme-options-page-settings.php');

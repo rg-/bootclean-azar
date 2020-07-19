@@ -74,6 +74,14 @@ add_filter('wpbc/filter/theme_settings/fields/footer', 'WPBC_child_custom_theme_
 
 function WPBC_child_custom_theme_settings__footer($fields){ 
 
+	$fields[] =  WPBC_acf_make_text_field(
+		array( 
+			'name' => 'footer_title',
+			'label' => _x('Section Title','bootclean'), 
+			'class' => 'acf-input-title',
+		)
+	); 
+
 	$fields[] =  WPBC_acf_make_image_field(
 		array( 
 			'name' => 'footer_background',

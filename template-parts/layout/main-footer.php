@@ -5,6 +5,7 @@ $email = str_replace('.', '(dot)', $email);
 $email = str_replace('@', '(at)', $email);
 $instagram = WPBC_get_theme_settings('general_instagram');
 
+$footer_title = WPBC_get_theme_settings('footer_title');
 $footer_form = WPBC_get_theme_settings('footer_form');
 $footer_copyright = WPBC_get_theme_settings('footer_copyright');
 ?>
@@ -33,7 +34,7 @@ $footer_copyright = WPBC_get_theme_settings('footer_copyright');
 		<div class="row gpb-6">
 
 			<div class="col-lg-2">
-				<h2 class="section-title text-white gmb-2">Contact</h2>
+				<h2 class="section-title text-white gmb-2"><?php echo $footer_title; ?></h2>
 			</div>
 
 			<div class="col-lg-4 gmb-2">
