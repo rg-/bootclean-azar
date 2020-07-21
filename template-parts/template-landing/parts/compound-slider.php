@@ -82,12 +82,16 @@
 						$hide_prev = false;
 						$hide_next = false;
 						if($count==0){
-							$hide_prev = true;
+							//$hide_prev = true;
 							$item_class = 'first';
 						}
 						if( ( $count + 1 ) == ( $max ) ){
-							$hide_next = true;
+							//$hide_next = true;
 							$item_class = 'last';
+						}
+
+						if($max==1){
+							$item_class = 'first last';
 						}
 						?>
 						<div class="item <?php echo $item_class; ?>" data-layout="<?php echo $layout; ?>" data-count="<?php echo $count; ?>" data-current="<?php echo ( $count + 1 ); ?>" data-max="<?php echo $max; ?>">
