@@ -9,9 +9,13 @@
 
 	$col_1 = 'order-1';
 	$col_2 = 'order-2';
+	$description_class = 'tr';
+	$year_class = 'br';
 	$arrows = 1;
 	if(!empty($args['reversed'])){
 		$arrows = 2;
+		$description_class = 'tl';
+		$year_class = 'bl';
 		$col_1 = 'order-2';
 		$col_2 = 'order-1';
 	}
@@ -35,12 +39,14 @@
 				<div class="embed-responsive embed-responsive-custom">
 					<div class="embed-responsive-item">
 
-						<?php if($arrows==1) azar_get_slick_prev('bl'); ?>
-						<?php if($arrows==2) azar_get_slick_next('br'); ?>
+						<?php if($arrows==1 && !$args['hide_prev']) azar_get_slick_prev('bl'); ?>
+						<?php if($arrows==2 && !$args['hide_next']) azar_get_slick_next('br'); ?>
 						
 						<?php azar_get_image_item(array( 'attachment_id' => $img_1 )); ?>
-						<span class="azar-slide-description"><?php echo $label;?></span>
-						<span class="azar-slide-year"><?php echo $year;?></span>
+						
+						<span class="azar-slide-description <?php echo $description_class; ?>"><?php echo $label;?></span>
+						<span class="azar-slide-year <?php echo $year_class; ?>"><?php echo $year;?></span>
+
 						<?php if(!empty($args['test'])){ echo "<span class='test-sizes'>IMG_1: 907x419px</span>";}?>
 					</div>
 				</div>
@@ -67,8 +73,8 @@
 			<div class="col-3 <?php echo $col_2; ?>">
 				<?php azar_get_image_item(array( 'attachment_id' => $img_4 )); ?>
 				<?php if(!empty($args['test'])){ echo "<span class='test-sizes'>IMG_4: 301x680px</span>";}?>
-				<?php if($arrows==1) azar_get_slick_next('br'); ?>
-				<?php if($arrows==2) azar_get_slick_prev('bl'); ?>
+				<?php if($arrows==1 && !$args['hide_prev'] ) azar_get_slick_next('br'); ?>
+				<?php if($arrows==2 && !$args['hide_next'] ) azar_get_slick_prev('bl'); ?>
 			</div>
 
 		</div>

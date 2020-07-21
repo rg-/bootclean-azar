@@ -13,7 +13,7 @@ Enable Theme Settings Page
 /* Enable theme_settings addon */
 add_filter('wpbc/filter/theme_settings/installed', '__return_true');
 /* Add the settings you need */
-include('functions/theme-options-theme-settings.php'); 
+include('functions/theme-settings.php'); 
 
 include('functions/theme-customs.php'); 
 

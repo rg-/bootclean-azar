@@ -20,15 +20,15 @@
 		<div class="row row-no-gutters h-100">
 
 			<div class="col-6 h-100 <?php echo $col_1; ?>">
-				<?php azar_get_slick_prev('bl'); ?>
+				<?php  if(!$args['hide_prev']) azar_get_slick_prev('bl'); ?>
 				<?php azar_get_image_item(array( 'attachment_id' => $img_1 )); ?>
-				<span class="azar-slide-description"><?php echo $label;?></span>
-				<span class="azar-slide-year"><?php echo $year;?></span>
+				<span class="azar-slide-description tr"><?php echo $label;?></span>
+				<span class="azar-slide-year br"><?php echo $year;?></span>
 				<?php if(!empty($args['test'])){ echo "<span class='test-sizes'>IMG_1: 604x680px</span>";}?>
 			</div>
 
 			<div class="col-6 h-100 <?php echo $col_2; ?>">
-				<?php azar_get_slick_next('br'); ?>
+				<?php  if(!$args['hide_next']) azar_get_slick_next('br'); ?>
 				<?php azar_get_image_item(array( 'attachment_id' => $img_2 )); ?>
 				<?php if(!empty($args['test'])){ echo "<span class='test-sizes'>IMG_2: 604x680px</span>";}?>
 			</div>

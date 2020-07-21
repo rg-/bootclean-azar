@@ -1,5 +1,14 @@
 <?php 
-	$acf_field = $args['acf_field']; 
+	/*
+		
+		$args passed
+	
+	*/
+
+	if(empty($args)) return;
+
+	$acf_field = $args['acf_field'];  
+	// _print_code($acf_field);
 	$base = $args['id'];
 ?>
 <div class="container gpb-4">

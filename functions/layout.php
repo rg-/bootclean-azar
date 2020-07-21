@@ -55,3 +55,12 @@ function custom_body_data($out){
 	
 	return $out;
 }
+
+add_action('wpbc/layout/body/end', function(){
+	$footer_background = WPBC_get_theme_settings('footer_background'); 
+?>
+<div class="fixed-element-background">
+	<div id="footer-bg" class="fixed-element-background-element is_hidden image-cover h-100" style="background-image: url(<?php echo $footer_background['url']; ?>);"></div>
+</div>
+<?php
+},29);

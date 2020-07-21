@@ -6,8 +6,30 @@
 	Use Material style preloaer
 
 	*/
+
+add_action('wpbc/layout/body/start', function(){ 
+	remove_action('wpbc/layout/body/start', 'action__wpbc_layout_body_start__loader', 10); 
+}, 1);  
+
+add_action('wpbc/layout/body/start', function(){
+	?>
+	<div id='body-loader' class='loading wpbc-material-loader'>
+		<span class='wpbc-material-loader-wrapper'>
+			<svg class="wpbc-material-loader-svg" width="60" height="60" viewBox="0 0 44 44"><circle class="wpbc-material-loader-circle" cx="22" cy="22" r="20" fill="none" stroke="#ffffff" stroke-width="2"></circle></svg>
+		</span>
+</div>
+	<?php
+}, 10); 
 	
-	add_action('wpbc/head/start',function(){
+	add_action('wpbc/head/scripts',function(){
+
+		/*
+	
+		-webkit-animation-play-state: running !important;
+		animation-play-state: running !important;
+
+		*/
+
 		?>
 		<style>
 
@@ -18,123 +40,96 @@
 		  animation-play-state: paused !important;
 		}
 
-			.material-loader {
-				background-image:none!important;
-				
+		#body-loader.wpbc-material-loader{
+			background-image: none!important;
+		}
+
+		.wpbc-material-loader-wrapper{
+			display: flex;
+			height: 100%;
+			align-items:center;
+			justify-content: center;
+		}
+
+		body .wpbc-material-loader-svg{ 
+			
+			animation-name: wpbc-material-loader-rotate;
+			animation-duration: 2s; 
+			animation-iteration-count: infinite; 
+			animation-timing-function: linear; 
+
+			-webkit-animation-name: wpbc-material-loader-rotate;
+			-webkit-animation-duration: 2s; 
+			-webkit-animation-iteration-count: infinite; 
+			-webkit-animation-timing-function: linear; 
+
+			-webkit-animation-play-state: running !important;
+		  animation-play-state: running !important;
+
+		}
+
+		body .wpbc-material-loader-circle{
+			stroke-dasharray: 1,150;
+			stroke-dashoffset: 0;
+			stroke-linecap: round; 
+
+			animation-name: wpbc-material-loader-stroke;
+			animation-duration: 1.5s; 
+			animation-iteration-count: infinite; 
+			animation-timing-function: ease-in-out; 
+
+			-webkit-animation-name: wpbc-material-loader-stroke;
+			-webkit-animation-duration: 1.5s; 
+			-webkit-animation-iteration-count: infinite; 
+			-webkit-animation-timing-function: ease-in-out; 
+
+			-webkit-animation-play-state: running !important;
+		  animation-play-state: running !important;
+			
+		} 
+
+		@-webkit-keyframes wpbc-material-loader-rotate{
+			to{
+				transform:rotate(1turn);
+				}
 			}
-			.material-loader.inited{
-				display: none!important;
-			}
-			.material-svg-loader {
-			  position: relative;
-			  margin: 0px auto;
-			  width: 80px;
+		@keyframes wpbc-material-loader-rotate{
+			to{
+				transform:rotate(1turn);
+				}
 			}
 
-			.material-svg-loader:before {
-			  content: '';
-			  display: block;
-			  padding-top: 100%;
+		@-webkit-keyframes wpbc-material-loader-stroke{
+			0%{
+				stroke-dasharray:1,150;
+				stroke-dashoffset:0
+				}
+			50%{
+				stroke-dasharray:90,150;
+				stroke-dashoffset:-35
+				}
+			to{
+				stroke-dasharray:90,150;
+				stroke-dashoffset:-124
+				}
 			}
-
-			.material-svg-loader .circular { 
-
-				-webkit-animation-play-state: running !important;
-		  	animation-play-state: running !important;
-
-			  -webkit-animation: rotate 2s linear infinite;
-			  animation: rotate 2s linear infinite;
-
-			  -webkit-transform-origin: center center;
-			  -ms-transform-origin: center center;
-			  transform-origin: center center;
-
-			  height: 100%; 
-			  width: 100%;
-			  position: absolute;
-			  top: 0;
-			  bottom: 0;
-			  left: 0;
-			  right: 0;
-			  margin: auto;
+		@keyframes wpbc-material-loader-stroke{
+			0%{
+				stroke-dasharray:1,150;
+				stroke-dashoffset:0
+				}
+			50%{
+				stroke-dasharray:90,150;
+				stroke-dashoffset:-35
+				}
+			to{
+				stroke-dasharray:90,150;
+				stroke-dashoffset:-124
+				}
 			}
-
-			.material-svg-loader .circular .path {
-
-				-webkit-animation-play-state: running !important;
-		  	animation-play-state: running !important;
- 
-			  -webkit-animation: dash 1.5s ease-in-out infinite;
-			  animation: dash 1.5s ease-in-out infinite;
-
-			  stroke-linecap: round;
-			  stroke:#ffffff;
-			  stroke-dasharray: 1, 200;
-			  stroke-dashoffset: 0; 
-			}
-
-			@-webkit-keyframes 
-				rotate {  100% {
-				 -webkit-transform: rotate(360deg);
-				 transform: rotate(360deg);
-				}
-				}
-
-				@keyframes 
-				rotate {  100% {
-				 -webkit-transform: rotate(360deg);
-				 transform: rotate(360deg);
-				}
-				}
-
-				@-webkit-keyframes 
-				dash {  0% {
-				 stroke-dasharray: 1, 200;
-				 stroke-dashoffset: 0;
-				}
-				 50% {
-				 stroke-dasharray: 89, 200;
-				 stroke-dashoffset: -35;
-				}
-				 100% {
-				 stroke-dasharray: 89, 200;
-				 stroke-dashoffset: -124;
-				}
-				}
-
-				@keyframes 
-				dash {  0% {
-				 stroke-dasharray: 1, 200;
-				 stroke-dashoffset: 0;
-				}
-				 50% {
-				 stroke-dasharray: 89, 200;
-				 stroke-dashoffset: -35;
-				}
-				 100% {
-				 stroke-dasharray: 89, 200;
-				 stroke-dashoffset: -124;
-				}
-				} 
 
 		</style>
 		<?php
-	},0);
-
-add_action('wpbc/layout/body/start', function(){ 
-	remove_action('wpbc/layout/body/start', 'action__wpbc_layout_body_start__loader', 10); 
-}, 1);  
-
-add_action('wpbc/layout/body/start', function(){
-	?>
-	<div id="body-loader" class="material-loader loading d-flex align-items-center justify-content-center">
-		<div class="material-svg-loader">
-		  <svg class="circular" viewBox="25 25 50 50">
-		    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-		  </svg>
-		</div>
-	</div>
-	<?php
-}, 10); 
+	},0); 
 
 ?>

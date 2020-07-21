@@ -49,7 +49,7 @@ function WPBC_wp_generate_attachment_metadata__wpbc_grayscale_image($meta) {
 */
 
 function azar_get_slick_next($class=''){
-	echo '<button class="slick-custom-arrow slick-custom-next '.$class.'"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	echo '<button class="slick-custom-arrow slick-custom-next '.$class.'"><svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="147.939px" height="119.931px" viewBox="0 0 147.939 119.931" enable-background="new 0 0 147.939 119.931"
 	 xml:space="preserve">
 <polygon fill="#222221" points="83.35,0 80.629,2.931 139.906,57.965 0,57.965 0,61.965 139.906,61.965 80.629,117 83.35,119.931 
@@ -57,7 +57,7 @@ function azar_get_slick_next($class=''){
 </svg></button>';
 }
 function azar_get_slick_prev($class=''){
-	echo '<button class="slick-custom-arrow slick-custom-prev '.$class.'"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	echo '<button class="slick-custom-arrow slick-custom-prev '.$class.'"><svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="147.939px" height="119.931px" viewBox="0 0 147.939 119.931" enable-background="new 0 0 147.939 119.931"
 	 xml:space="preserve">
 <polygon fill="#222221" points="64.59,119.931 67.311,117 8.033,61.965 147.939,61.965 147.939,57.965 8.033,57.965 67.311,2.931 
@@ -99,24 +99,26 @@ function azar_get_icon($atts, $content = null , $tag){
   $fill = !empty($args['color']) ? $args['color'] : '#030303';
   
   if( $tag == 'icon_instagram' ){
-  	$out = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  	$uId = 'svg_'.uniqid();
+  	$uId2 = 'svg_'.uniqid();
+  	$out = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
 <g>
 	<defs>
-		<rect id="SVGID_1_" x="0.092" width="39.817" height="40.001"/>
+		<rect id="'.$uId.'" x="0.092" width="39.817" height="40.001"/>
 	</defs>
-	<clipPath id="SVGID_2_">
-		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	<clipPath id="'.$uId2.'">
+		<use xlink:href="#'.$uId.'"  overflow="visible"/>
 	</clipPath>
-	<path fill="'.$fill.'" clip-path="url(#SVGID_2_)" d="M28.387,0h-16.59C4.792,0,0.092,4.792,0.092,11.705v16.59c0,3.41,1.106,6.545,3.318,8.571
+	<path fill="'.$fill.'" clip-path="url(#'.$uId2.')" d="M28.387,0h-16.59C4.792,0,0.092,4.792,0.092,11.705v16.59c0,3.41,1.106,6.545,3.318,8.571
 		c2.12,2.121,5.162,3.135,8.388,3.135h16.405c3.317,0,6.36-1.106,8.387-3.135c2.121-2.119,3.319-5.161,3.319-8.571V11.797
 		c0-3.41-1.106-6.359-3.135-8.387C34.747,1.198,31.797,0,28.387,0 M36.313,28.388c0,2.396-0.737,4.516-2.211,5.898
 		c-1.383,1.382-3.41,2.119-5.899,2.119H11.797c-2.396,0-4.332-0.737-5.899-2.119c-1.566-1.567-2.212-3.594-2.212-6.083v-16.59
 		c0-2.396,0.738-4.517,2.12-5.899c1.383-1.382,3.41-2.12,5.899-2.12h16.589c2.489,0,4.517,0.737,6.084,2.212
 		c1.382,1.567,2.119,3.411,2.119,5.899v16.59L36.313,28.388z"/>
-	<path fill="'.$fill.'" clip-path="url(#SVGID_2_)" d="M30.692,6.82c-1.383,0-2.397,1.106-2.397,2.397c0,1.382,1.106,2.396,2.397,2.396
+	<path fill="'.$fill.'" clip-path="url(#'.$uId2.')" d="M30.692,6.82c-1.383,0-2.397,1.106-2.397,2.397c0,1.382,1.106,2.396,2.397,2.396
 		c1.382,0,2.396-1.106,2.396-2.396C32.996,7.926,31.981,6.82,30.692,6.82"/>
-	<path fill="'.$fill.'" clip-path="url(#SVGID_2_)" d="M19.908,9.678c-5.622,0-10.23,4.515-10.23,10.229c0,5.624,4.516,10.232,10.23,10.232
+	<path fill="'.$fill.'" clip-path="url(#'.$uId2.')" d="M19.908,9.678c-5.622,0-10.23,4.515-10.23,10.229c0,5.624,4.516,10.232,10.23,10.232
 		c5.715,0,10.415-4.518,10.415-10.232S25.531,9.678,19.908,9.678 M19.908,26.637c-3.687,0-6.636-2.949-6.636-6.636
 		s2.949-6.636,6.636-6.636s6.637,2.95,6.637,6.636S23.594,26.637,19.908,26.637"/>
 </g>
@@ -125,7 +127,7 @@ function azar_get_icon($atts, $content = null , $tag){
 
   if( $tag == 'icon_envelope' ){
 
-  	$out = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  	$out = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
 <path fill="'.$fill.'" d="M36.082,1.082H3.917C1.758,1.082,0,2.839,0,5v30.001c0,2.159,1.758,3.917,3.917,3.917h32.165
 	c2.16,0,3.918-1.758,3.918-3.917V5C40,2.839,38.242,1.082,36.082,1.082z M2.887,6.924l16.167,14.012
@@ -138,9 +140,9 @@ function azar_get_icon($atts, $content = null , $tag){
 
   if( $tag == 'icon_nomade' ){
 
-  	$out = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  	$out = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
-<g id="Layer_1_1_">
+<g>
 </g>
 <g>
 	<path fill="'.$fill.'" d="M32.791,28.396l-1.131-0.795c-0.17,0.23-0.352,0.455-0.535,0.676c-0.031,0.037-0.059,0.078-0.092,0.113

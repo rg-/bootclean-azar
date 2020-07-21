@@ -1,6 +1,15 @@
 <?php
+	
+	/*
+		
+		$args passed
+	
+	*/
+
+	if(empty($args)) return;
 
 	$acf_field = $args['acf_field'];  
+	// _print_code($acf_field);
 
 ?>
 
@@ -22,87 +31,80 @@
 
 		<div class="col-md-6 gmt-1 gmt-md-0 gmb-3 gmb-md-0">
 
-			<div class="azar-3-compound-images inview-me-fadeUp">
-				<div class="i-1">
+			<div class="azar-3-compound-images">
+				<?php 
+					$slick = array(
+						'dots' => false,
+						'arrows' => false, 
+						'speed' => 500,
+						'autoplay' => true, 
+					);
+				?>
+				<div class="i-1 inview-me-fadeUp">
 					<div class="c">
-
 						<?php 
-						$slick = array(
-							'dots' => false,
-							'arrows' => false, 
-							'speed' => 500,
-							'autoplay' => true,
-							'autoplaySpeed' => 5200,
-						);
-						$slick = json_encode($slick);
+						$slick['autoplaySpeed'] = 5200;
+						$slick_1 = json_encode($slick); 
+						if(!empty($acf_field['gallery_1'])){
 						?>
-						<div class="theme-slick-slider" data-slick='<?php echo $slick; ?>'>
-							<div class="item">
-								<img src="[WPBC_get_attachment_image_src id=40]" alt="" />
-							</div>
-							<div class="item">
-								<img src="[WPBC_get_attachment_image_src id=40]" alt="" />
-							</div>
-							<div class="item">
-								<img src="[WPBC_get_attachment_image_src id=40]" alt="" />
-							</div>
+						<div class="theme-slick-slider" data-slick='<?php echo $slick_1; ?>'>
+							<?php foreach($acf_field['gallery_1'] as $item ){
+								$img = $item['url'];
+								$sizes = $item['sizes'];
+								$img_medium = $sizes['medium'];
+								$img_gray = $sizes['wpbc_grayscale_image'];
+								?>
+								<div class="item">
+									<img src="<?php echo $img; ?>" alt="" />
+								</div>
+							<?php } ?>
 						</div>
-
-					</div>
+						<?php } ?> 
+					</div><!-- .c -->
 				</div>
-				<div class="i-2">
+				<div class="i-2 inview-me-fadeUp">
 					<div class="c">
-						
 						<?php 
-						$slick = array(
-							'dots' => false,
-							'arrows' => false, 
-							'speed' => 500,
-							'autoplay' => true,
-							'autoplaySpeed' => 5800,
-						);
-						$slick = json_encode($slick);
+						$slick['autoplaySpeed'] = 5800;
+						$slick_2 = json_encode($slick); 
+						if(!empty($acf_field['gallery_2'])){
 						?>
-						<div class="theme-slick-slider" data-slick='<?php echo $slick; ?>'>
-							<div class="item">
-								<img src="[WPBC_get_attachment_image_src id=41]" alt="" />
-							</div>
-							<div class="item">
-								<img src="[WPBC_get_attachment_image_src id=41]" alt="" />
-							</div>
-							<div class="item">
-								<img src="[WPBC_get_attachment_image_src id=41]" alt="" />
-							</div>
+						<div class="theme-slick-slider" data-slick='<?php echo $slick_2; ?>'>
+							<?php foreach($acf_field['gallery_2'] as $item ){
+								$img = $item['url'];
+								$sizes = $item['sizes'];
+								$img_medium = $sizes['medium'];
+								$img_gray = $sizes['wpbc_grayscale_image'];
+								?>
+								<div class="item">
+									<img src="<?php echo $img; ?>" alt="" />
+								</div>
+							<?php } ?>
 						</div>
-
-					</div>
+						<?php } ?> 
+					</div><!-- .c -->
 				</div>
-				<div class="i-3">
+				<div class="i-3 inview-me-fadeUp">
 					<div class="c">
-						
 						<?php 
-						$slick = array(
-							'dots' => false,
-							'arrows' => false, 
-							'speed' => 500,
-							'autoplay' => true,
-							'autoplaySpeed' => 6200,
-						);
-						$slick = json_encode($slick);
+						$slick['autoplaySpeed'] = 6200;
+						$slick_3 = json_encode($slick); 
+						if(!empty($acf_field['gallery_3'])){
 						?>
-						<div class="theme-slick-slider" data-slick='<?php echo $slick; ?>'>
-							<div class="item">
-								<img src="[WPBC_get_attachment_image_src id=42]" alt="" />
-							</div>
-							<div class="item">
-								<img src="[WPBC_get_attachment_image_src id=42]" alt="" />
-							</div>
-							<div class="item">
-								<img src="[WPBC_get_attachment_image_src id=42]" alt="" />
-							</div>
+						<div class="theme-slick-slider" data-slick='<?php echo $slick_3; ?>'>
+							<?php foreach($acf_field['gallery_3'] as $item ){
+								$img = $item['url'];
+								$sizes = $item['sizes'];
+								$img_medium = $sizes['medium'];
+								$img_gray = $sizes['wpbc_grayscale_image'];
+								?>
+								<div class="item">
+									<img src="<?php echo $img; ?>" alt="" />
+								</div>
+							<?php } ?>
 						</div>
-
-					</div>
+						<?php } ?> 
+					</div><!-- .c -->
 				</div>
 				 
 

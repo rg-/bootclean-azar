@@ -22,11 +22,11 @@
 ?>
 <div class="azar-compound-embeds embed-responsive embed-responsive-16by9">
 	<div class="embed-responsive-item ">
-		<?php azar_get_slick_prev('bl'); ?>
-		<?php azar_get_slick_next('br'); ?>
+		<?php if(!$args['hide_prev']) azar_get_slick_prev('bl'); ?>
+		<?php if(!$args['hide_next']) azar_get_slick_next('br'); ?>
 		<?php azar_get_image_item(array( 'attachment_id' => $img_1 )); ?>
-		<span class="azar-slide-description"><?php echo $label;?></span>
-						<span class="azar-slide-year"><?php echo $year;?></span>
+		<span class="azar-slide-description tl"><?php echo $label;?></span>
+		<span class="azar-slide-year tr"><?php echo $year;?></span>
 		<?php if(!empty($args['test'])){ echo "<span class='test-sizes'>IMG_1: 1212x680px</span>";}?>
 	</div>
 </div>

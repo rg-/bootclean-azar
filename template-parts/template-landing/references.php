@@ -1,6 +1,13 @@
-<?php 
+<?php
+	/*
+		
+		$args passed
+	
+	*/
+
+	if(empty($args)) return;
+
 	$acf_field = $args['acf_field']; 
-	$base = $args['id'];
 ?>
 <div class="container">
 
@@ -22,42 +29,45 @@ $slick = array(
 	'autoplaySpeed' => 5200,
 );
 $slick = json_encode($slick);
+
+	// _print_code($acf_field);
+	// client_comments
+
+if(!empty($acf_field['client_comments'])){
+	$client_comments = $acf_field['client_comments'];
+	$count = 0;
+	$max = count($client_comments); 
 ?>
 <div class="theme-slick-slider references-slider inview-me-fadeUp" data-slick='<?php echo $slick; ?>'>
-
-	<div class="item">
-		<div class="container">
-			<div class="row">
-				<div class="col-10"> 
-					<span class="quote-lead">“”</span>
-					<p class="font-italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					<p>Robert and Eddna Kafler - Posada Ayana - José Ignacio</p>
-				</div>
-				<div class="col-2">
-					<?php azar_get_slick_prev('bl'); ?><br>
-					<?php azar_get_slick_next('br'); ?>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="item">
-		<div class="container">
-			<div class="row">
-				<div class="col-10 font-italic"> 
-					<span class="lquote-ead">“”</span>
-					<p class="font-italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					<p>Robert and Eddna Kafler - Posada Ayana - José Ignacio</p>
-				</div>
-				<div class="col-2">
-					<?php azar_get_slick_prev('bl'); ?><br>
-					<?php azar_get_slick_next('br'); ?>
+	<?php foreach($client_comments as $key => $value){
+		$item_class = '';
+		if($count==0){ 
+			$item_class = 'first';
+		}
+		if( ( $count + 1 ) == ( $max ) ){ 
+			$item_class = 'last';
+		}
+		?>
+		<div class="item <?php echo $item_class; ?>">
+			<div class="container">
+				<div class="row">
+					<div class="col-10"> 
+						<span class="quote-lead">“”</span>
+						<p class="font-italic"><?php echo $value['client_quote']; ?></p>
+						<p><?php echo $value['client_cite']; ?></p>
+					</div>
+					<div class="col-2">
+						<?php azar_get_slick_prev('bl'); ?><br>
+						<?php azar_get_slick_next('br'); ?>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
+	<?php
+	$count ++;
+	 }?>
 </div>
+<?php } ?>
 
 <div class="container gpy-2 inview-me-fadeUp" style="transition-delay:1s;">
 
@@ -73,18 +83,19 @@ $slick = json_encode($slick);
 						'dots' => false, 'arrows' => false, 'speed' => 500, 'autoplay' => true, 'autoplaySpeed' => 3200,
 					);
 					$slick = json_encode($slick);
+
+					if(!empty($acf_field['references_gallery_1'])){
+					$references_gallery_1 = $acf_field['references_gallery_1'];
 					?>
-					<div class="theme-slick-slider" data-slick='<?php echo $slick; ?>'>
-						<div class="item">
-							<img src="[WPBC_get_attachment_image_src id=52]" alt="" /> 
+						<div class="theme-slick-slider" data-slick='<?php echo $slick; ?>'>
+							<?php foreach ($references_gallery_1 as $key => $value) { ?>
+								<div class="item">
+								<img src="[WPBC_get_attachment_image_src id=<?php echo $value['id'];?>]" alt="" /> 
+							</div>
+							<?php } ?>
 						</div>
-						<div class="item">
-							<img src="[WPBC_get_attachment_image_src id=53]" alt="" /> 
-						</div>
-						<div class="item">
-							<img src="[WPBC_get_attachment_image_src id=55]" alt="" /> 
-						</div>
-					</div>
+					<?php } ?>
+
 				</div>
 
 				<div class="col w-20 px-1 odd">
@@ -93,18 +104,19 @@ $slick = json_encode($slick);
 						'dots' => false, 'arrows' => false, 'speed' => 500, 'autoplay' => true, 'autoplaySpeed' => 3700,
 					);
 					$slick = json_encode($slick);
+
+					if(!empty($acf_field['references_gallery_2'])){
+					$references_gallery_2 = $acf_field['references_gallery_2'];
 					?>
-					<div class="theme-slick-slider" data-slick='<?php echo $slick; ?>'>
-						<div class="item">
-							<img src="[WPBC_get_attachment_image_src id=53]" alt="" /> 
+						<div class="theme-slick-slider" data-slick='<?php echo $slick; ?>'>
+							<?php foreach ($references_gallery_2 as $key => $value) { ?>
+								<div class="item">
+								<img src="[WPBC_get_attachment_image_src id=<?php echo $value['id'];?>]" alt="" /> 
+							</div>
+							<?php } ?>
 						</div>
-						<div class="item">
-							<img src="[WPBC_get_attachment_image_src id=55]" alt="" /> 
-						</div>
-						<div class="item">
-							<img src="[WPBC_get_attachment_image_src id=52]" alt="" /> 
-						</div>
-					</div>
+					<?php } ?>
+
 				</div>
 
 				<div class="col w-20 px-1 even">
@@ -113,18 +125,18 @@ $slick = json_encode($slick);
 						'dots' => false, 'arrows' => false, 'speed' => 500, 'autoplay' => true, 'autoplaySpeed' => 5100,
 					);
 					$slick = json_encode($slick);
+					if(!empty($acf_field['references_gallery_3'])){
+					$references_gallery_3 = $acf_field['references_gallery_3'];
 					?>
-					<div class="theme-slick-slider" data-slick='<?php echo $slick; ?>'>
-						<div class="item">
-							<img src="[WPBC_get_attachment_image_src id=55]" alt="" /> 
+						<div class="theme-slick-slider" data-slick='<?php echo $slick; ?>'>
+							<?php foreach ($references_gallery_3 as $key => $value) { ?>
+								<div class="item">
+								<img src="[WPBC_get_attachment_image_src id=<?php echo $value['id'];?>]" alt="" /> 
+							</div>
+							<?php } ?>
 						</div>
-						<div class="item">
-							<img src="[WPBC_get_attachment_image_src id=52]" alt="" /> 
-						</div>
-						<div class="item">
-							<img src="[WPBC_get_attachment_image_src id=53]" alt="" /> 
-						</div>
-					</div>
+					<?php } ?>
+
 				</div>
 
 				<div class="col w-40 px-1 even">
@@ -134,15 +146,18 @@ $slick = json_encode($slick);
 						'dots' => false, 'arrows' => false, 'speed' => 500, 'autoplay' => true, 'autoplaySpeed' => 5200,
 					);
 					$slick = json_encode($slick);
+					if(!empty($acf_field['references_gallery_4'])){
+					$references_gallery_4 = $acf_field['references_gallery_4'];
 					?>
-					<div class="theme-slick-slider" data-slick='<?php echo $slick; ?>'>
-						<div class="item">
-							<img src="[WPBC_get_attachment_image_src id=54]" alt="" />
+						<div class="theme-slick-slider" data-slick='<?php echo $slick; ?>'>
+							<?php foreach ($references_gallery_4 as $key => $value) { ?>
+								<div class="item">
+								<img src="[WPBC_get_attachment_image_src id=<?php echo $value['id'];?>]" alt="" /> 
+							</div>
+							<?php } ?>
 						</div>
-						<div class="item">
-							<img src="[WPBC_get_attachment_image_src id=54]" alt="" />
-						</div>
-					</div>
+					<?php } ?>
+					
 				</div>
 
 			</div>
