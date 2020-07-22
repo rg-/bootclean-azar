@@ -7540,6 +7540,10 @@ body.inited .navbar-nav > .nav-item {
 .side-menu .dropdown-menu {
   margin: 0;
   padding: 0 19px; }
+.side-menu .icon_svg svg path {
+  fill: #787878; }
+.side-menu a:hover svg path {
+  fill: #030303; }
 
 .embed-responsive-custom-header:before {
   padding-top: 52%; }

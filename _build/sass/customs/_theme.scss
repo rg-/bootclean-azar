@@ -280,6 +280,16 @@ body.scrolling-mainHeader{
 		margin: 0; 
 		padding: 0 $grid-gutter;
 	}
+	.icon_svg{
+		svg{
+			path{
+				fill:#787878;
+			}
+		}
+	}
+	a:hover svg path{
+		fill:$primary;
+	}
 }
 
 
@@ -640,6 +650,12 @@ $azar-3-compound-breakpoint: sm;
 	a{
 		color:#fff;
 		text-decoration: none;
+	}
+
+	.footer--social{
+		a{
+			letter-spacing: 1px;
+		}
 	}
 
 }

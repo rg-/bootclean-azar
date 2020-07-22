@@ -55,7 +55,7 @@ function custom_body_data($out){
 	
 	return $out;
 }
-
+/*
 add_action('wpbc/layout/body/end', function(){
 	$footer_background = WPBC_get_theme_settings('footer_background'); 
 ?>
@@ -64,3 +64,4 @@ add_action('wpbc/layout/body/end', function(){
 </div>
 <?php
 },29);
+*/

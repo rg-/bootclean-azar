@@ -35,14 +35,14 @@ function wpbc_child_main_navbar_defaults($args){
 		$args['navbar_brand']['class'] .= ' scroll-to-top';
 		$args['navbar_brand']['href'] = '#';
 		$args['navbar_brand']['attrs'] = ' data-affix-removeclass="" data-affix-addclass="py-2" ';
-		$args['container_class'] = 'container gpx-2 gpx-md-1 gpt-3 align-items-start';
+		$args['container_class'] = 'container gpx-1 gpx-md-1 gpt-3 align-items-start';
 		$args['container_attrs'] = ' data-affix-removeclass="gpt-3 align-items-start" data-affix-addclass="" ';
 		
 	}else{
 		$args['navbar_brand']['class'] .= 'gpt-2 pb-3';
 		$args['navbar_brand']['attrs'] = ' data-affix-removeclass="gpt-2 pb-3" data-affix-addclass="py-2" ';
 		$args['class'] .= ' bg-primary ';
-		$args['container_class'] = 'container gpx-2 gpx-md-1 align-items-center';
+		$args['container_class'] = 'container gpx-1 gpx-md-1 align-items-center';
 		$args['container_attrs'] = ' data-affix-removeclass="" data-affix-addclass="" ';
 	}
 

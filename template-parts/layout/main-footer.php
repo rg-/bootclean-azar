@@ -8,6 +8,7 @@ $instagram = WPBC_get_theme_settings('general_instagram');
 $footer_title = WPBC_get_theme_settings('footer_title');
 $footer_form = WPBC_get_theme_settings('footer_form');
 $footer_copyright = WPBC_get_theme_settings('footer_copyright');
+$footer_background = WPBC_get_theme_settings('footer_background'); 
 ?>
 
 
@@ -27,7 +28,7 @@ $footer_copyright = WPBC_get_theme_settings('footer_copyright');
 
 
 <div id="contact"></div>
-<footer id="main-footer" class="gpt-6 gpb-1 text-white position-relative" data-inview-me="fixed-background" data-fixed-target="#footer-bg"> 
+<footer id="main-footer" class="gpt-6 gpb-1 text-white position-relative image-cover" style="background-attachment: fixed; background-image: url(<?php echo $footer_background['url']; ?>);"> 
 	
 	<div class="container">
 		
@@ -37,7 +38,7 @@ $footer_copyright = WPBC_get_theme_settings('footer_copyright');
 				<h2 class="section-title text-white gmb-2"><?php echo $footer_title; ?></h2>
 			</div>
 
-			<div class="col-lg-4 gmb-2">
+			<div class="col-lg-4 gmb-2 footer--social">
 				
 				<?php if(!empty($email)){ ?> 
 					<p><a class="antispam preserve-content-span" href="mailto:<?php echo $email; ?>" target="_blank">[icon_envelope color="#ffffff"] &nbsp;&nbsp;<span></span></a></p>
@@ -49,7 +50,7 @@ $footer_copyright = WPBC_get_theme_settings('footer_copyright');
 			
 			</div>
 
-			<div class="col-lg-6">
+			<div class="col-lg-6 gpb-md-6">
 				<?php if(!empty($footer_form)){ ?>
 				[contact-form-7 id="<?php echo $footer_form; ?>" title="Formulario de contacto"]
 				<?php } ?>
