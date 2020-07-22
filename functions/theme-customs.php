@@ -65,6 +65,12 @@ function azar_get_slick_prev($class=''){
 </svg></button>';
 }
 
+function azar_get_lazyimage($args){
+	if(!empty($args)){
+		?><img data-lazyimage-src="<?php echo $args['lazy-src']; ?>" src="<?php echo $args['src']; ?>" alt="" /><?php
+	}
+}
+
 function azar_get_image_item($args){
 	if(!empty($args)){
 		

@@ -65,7 +65,7 @@ $footer_background = WPBC_get_theme_settings('footer_background');
 				<?php } ?>
 			</div>
 			<div class="col-md-6 text-center text-md-right">
-				<p><a class="text-white" href="http://nomadeweb.com" target="_blank">Diseño y desarrollo por [icon_nomade color="#ffffff"]</a></p>
+				<p><a class="text-white" href="http://nomadeweb.com" target="_blank">Design and developed by [icon_nomade color="#ffffff"]</a></p>
 			</div>
 		</div>
 	

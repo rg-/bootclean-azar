@@ -48,14 +48,13 @@
 						if(!empty($acf_field['gallery_1'])){
 						?>
 						<div class="theme-slick-slider" data-slick='<?php echo $slick_1; ?>'>
-							<?php foreach($acf_field['gallery_1'] as $item ){
-								$img = $item['url'];
-								$sizes = $item['sizes'];
-								$img_medium = $sizes['medium'];
-								$img_gray = $sizes['wpbc_grayscale_image'];
+							<?php foreach($acf_field['gallery_1'] as $value ){ 
 								?>
 								<div class="item">
-									<img src="<?php echo $img; ?>" alt="" />
+									<?php azar_get_lazyimage(array(
+										'lazy-src' => $value['url'],
+										'src' => !empty($value['sizes']['wpbc_grayscale_image']) ? $value['sizes']['wpbc_grayscale_image'] : $value['sizes']['medium']
+									)); ?>
 								</div>
 							<?php } ?>
 						</div>
@@ -70,14 +69,13 @@
 						if(!empty($acf_field['gallery_2'])){
 						?>
 						<div class="theme-slick-slider" data-slick='<?php echo $slick_2; ?>'>
-							<?php foreach($acf_field['gallery_2'] as $item ){
-								$img = $item['url'];
-								$sizes = $item['sizes'];
-								$img_medium = $sizes['medium'];
-								$img_gray = $sizes['wpbc_grayscale_image'];
+							<?php foreach($acf_field['gallery_2'] as $value ){ 
 								?>
 								<div class="item">
-									<img src="<?php echo $img; ?>" alt="" />
+									<?php azar_get_lazyimage(array(
+										'lazy-src' => $value['url'],
+										'src' => !empty($value['sizes']['wpbc_grayscale_image']) ? $value['sizes']['wpbc_grayscale_image'] : $value['sizes']['medium']
+									)); ?>
 								</div>
 							<?php } ?>
 						</div>
@@ -92,14 +90,13 @@
 						if(!empty($acf_field['gallery_3'])){
 						?>
 						<div class="theme-slick-slider" data-slick='<?php echo $slick_3; ?>'>
-							<?php foreach($acf_field['gallery_3'] as $item ){
-								$img = $item['url'];
-								$sizes = $item['sizes'];
-								$img_medium = $sizes['medium'];
-								$img_gray = $sizes['wpbc_grayscale_image'];
+							<?php foreach($acf_field['gallery_3'] as $value ){ 
 								?>
 								<div class="item">
-									<img src="<?php echo $img; ?>" alt="" />
+									<?php azar_get_lazyimage(array(
+										'lazy-src' => $value['url'],
+										'src' => !empty($value['sizes']['wpbc_grayscale_image']) ? $value['sizes']['wpbc_grayscale_image'] : $value['sizes']['medium']
+									)); ?>
 								</div>
 							<?php } ?>
 						</div>

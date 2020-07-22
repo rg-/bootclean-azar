@@ -29,8 +29,9 @@ add_filter('WPBC_add_inline_style',function($css){
 
 add_filter('WPBC_enqueue_scripts__footer_scripts', function($scripts){ 
 
+	$var = uniqid();
 	$scripts['custom'] = array(
-		'src'=> CHILD_THEME_URI .'/js/custom.js',
+		'src'=> CHILD_THEME_URI .'/js/custom.js?v='.$var,
 		'dependence' => array('jquery')
 	);
 

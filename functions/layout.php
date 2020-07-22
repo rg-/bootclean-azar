@@ -65,3 +65,14 @@ add_action('wpbc/layout/body/end', function(){
 <?php
 },29);
 */
+add_filter('wpbc/filter/layout/go-up', function($goup){
+
+	// '<a href="#" class="btn btn-light"><i class="fa fa-angle-up"></i></a>'
+	$goup = '<a href="#" class="btn btn-light"><svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="147.939px" height="119.931px" viewBox="0 0 147.939 119.931" enable-background="new 0 0 147.939 119.931"
+	 xml:space="preserve">
+<polygon fill="#222221" points="64.59,119.931 67.311,117 8.033,61.965 147.939,61.965 147.939,57.965 8.033,57.965 67.311,2.931 
+	64.59,0 0,59.965 "/>
+</svg></a>';
+	return $goup; 
+},10,1);

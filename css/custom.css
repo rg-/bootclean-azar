@@ -7335,6 +7335,15 @@ html.no-touchevents .post-share.animate-buttons:hover .share_buttons {
 html, body {
   height: 100%; }
 
+#go-up .btn {
+  padding: 4px 5px; }
+#go-up svg {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  width: 20px;
+  height: auto; }
+
 .icon_svg {
   display: inline-block; }
   .icon_svg svg {
@@ -7416,11 +7425,20 @@ html, body {
   background-color: #e9ecef; }
 
 .azar-composition-slider-mini .w-20 {
-  flex: 0 0 20%;
-  max-width: 20%; }
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%; }
 .azar-composition-slider-mini .w-40 {
-  flex: 0 0 40%;
-  max-width: 40%; }
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-top: 20px; }
+@media (min-width: 576px) {
+  .azar-composition-slider-mini .w-20 {
+    flex: 0 0 20%;
+    max-width: 20%; }
+  .azar-composition-slider-mini .w-40 {
+    margin-top: 0;
+    flex: 0 0 40%;
+    max-width: 40%; } }
 .azar-composition-slider-mini .even {
   padding-bottom: 8%; }
 .azar-composition-slider-mini .odd {
@@ -7560,7 +7578,7 @@ body.inited .navbar-nav > .nav-item {
   padding-top: 57.5%; }
 .azar-compound-embeds .azar-slide-description,
 .azar-compound-embeds .azar-slide-year {
-  display: inline-block;
+  display: none;
   color: #fff;
   position: absolute;
   padding: 28px 24px;
@@ -7819,6 +7837,8 @@ body.inited .navbar-nav > .nav-item {
 #main-footer a {
   color: #fff;
   text-decoration: none; }
+#main-footer .footer--social a {
+  letter-spacing: 1px; }
 
 .has-primary-background-color {
   background-color: #030303; }

@@ -98,7 +98,7 @@ add_filter('wpbc/filter/template-landing/build_sections', function($build_sectio
 			'class' => 'template-landing--references bg-white '.$section_class,
 			'acf' => array(
 				'group_id' => 'references',
-				'label' => __('References','bootclean'),
+				'label' => __('Fixed content 4 image/slides','bootclean'),
 				'sub_fields' => array(),
 			),
 		);
@@ -132,6 +132,18 @@ add_filter('wpbc/filter/template-landing/build_sections', function($build_sectio
 			'acf' => array(
 				'group_id' => 'fixed-content-2',
 				'label' => __('Fixed Content 2','bootclean'),
+				'sub_fields' => array(),
+			),
+		);
+
+
+	$build_sections[] = array(
+			'id' => 'references-2',
+			'attrs'=>'data-inview-me="detect"',
+			'class' => 'template-landing--references-2 bg-white '.$section_class,
+			'acf' => array(
+				'group_id' => 'references-2',
+				'label' => __('Testimonials','bootclean'),
 				'sub_fields' => array(),
 			),
 		);
@@ -340,39 +352,7 @@ add_filter('wpbc/filter/template-landing/sub_fields/?group=management', function
 },10,1);
 
 add_filter('wpbc/filter/template-landing/sub_fields/?group=references', function($sub_fields){
-	
-	$sub_fields[] = WPBC_acf_make_text_field(
-		array(
-			'name'=> 'title',
-			'label'=>'Title',
-			'class'=>'acf-input-title',
-		)
-	); 
 
-	$client_comments_fields = array();
-	$client_comments_fields[] = WPBC_acf_make_textarea_field(
-		array(
-			'name'=> 'client_quote',
-			'label'=>'Quote',
-			'class'=>'',
-		)
-	); 
-	$client_comments_fields[] = WPBC_acf_make_text_field(
-		array(
-			'name'=> 'client_cite',
-			'label'=>'Cite',
-			'class'=>'',
-		)
-	); 
-
-	$sub_fields[] = WPBC_acf_make_repeater_field(
-		array(
-			'name'=> 'client_comments',
-			'label'=>'Client comments',
-			'sub_fields' => $client_comments_fields,
-			'button_label' => 'Add Client comment',
-		)
-	);
 
 	$sub_fields[] = WPBC_acf_make_gallery_advanced_field(
 		array(
@@ -405,6 +385,44 @@ add_filter('wpbc/filter/template-landing/sub_fields/?group=references', function
 			'instructions'=> '477x220 @x2', 
 		)
 	);
+
+	return $sub_fields;
+},10,1);
+
+add_filter('wpbc/filter/template-landing/sub_fields/?group=references-2', function($sub_fields){
+	
+	$sub_fields[] = WPBC_acf_make_text_field(
+		array(
+			'name'=> 'title',
+			'label'=>'Title',
+			'class'=>'acf-input-title',
+		)
+	); 
+
+	$client_comments_fields = array();
+	$client_comments_fields[] = WPBC_acf_make_textarea_field(
+		array(
+			'name'=> 'client_quote',
+			'label'=>'Quote',
+			'class'=>'',
+		)
+	); 
+	$client_comments_fields[] = WPBC_acf_make_text_field(
+		array(
+			'name'=> 'client_cite',
+			'label'=>'Cite',
+			'class'=>'',
+		)
+	); 
+
+	$sub_fields[] = WPBC_acf_make_repeater_field(
+		array(
+			'name'=> 'client_comments',
+			'label'=>'Client comments',
+			'sub_fields' => $client_comments_fields,
+			'button_label' => 'Add Client comment',
+		)
+	); 
 
 	return $sub_fields;
 },10,1);

@@ -22,9 +22,10 @@ function wpbc_child_main_navbar_defaults($args){
 	$args['navbar_brand']['class'] = ''; 
  
 	$logo = '[WPBC_get_stylesheet_directory_uri]/images/theme/azar-logo.svg';
-	$logo_alt = '[WPBC_get_stylesheet_directory_uri]/images/theme/azar-logo-alt.svg';
+	// $logo_alt = '[WPBC_get_stylesheet_directory_uri]/images/theme/azar-logo-alt.svg';
+	$logo_alt = '[WPBC_get_stylesheet_directory_uri]/images/theme/logo-archmood.png';
 	
-	$args['navbar_brand']['title'] = '<img class="" width="132" src="'.$logo.'" alt="'.$args['navbar_brand']['title'].'" data-affix-addclass="d-none"/><img class="d-none" width="58" src="'.$logo_alt.'" alt="'.$args['navbar_brand']['title'].'" data-affix-removeclass="d-none"/>';
+	$args['navbar_brand']['title'] = '<img class="" width="132" src="'.$logo.'" alt="'.$args['navbar_brand']['title'].'" data-affix-addclass="d-none"/><img class="d-none" width="194" src="'.$logo_alt.'" alt="'.$args['navbar_brand']['title'].'" data-affix-removeclass="d-none"/>';
 
 	/*
 	580 > 132

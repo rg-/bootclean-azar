@@ -8,13 +8,13 @@
 	  'infinite' => false,
 		'speed' => 500,
 		'autoplay' => false,
-		'autoplaySpeed' => 5200,
+		'autoplaySpeed' => 7200,
 	);
 	$slick = json_encode($slick);
 	$template_folder = 'template-landing/parts';
 ?>
 <div class="row inview-me-fadeUp">
-	<div class="col-12">
+	<div class="col-12 px-0 px-md-1">
 		<div id="<?php echo $base; ?>-ajax" class="ajax-load-holder">
 			<?php
 			$compound_slider = $acf_field['compound_slider'];
@@ -22,7 +22,7 @@
 				$count = 0;
 				$max = count($compound_slider); 
 				?>
-				<div id="slider-design-<?php echo $base; ?>" class="theme-slick-slider" data-slick='<?php echo $slick; ?>'>
+				<div id="slider-design-<?php echo $base; ?>" class="theme-slick-slider inview-me-slick" data-slick='<?php echo $slick; ?>'>
 					<?php
 
 					foreach ($compound_slider as $key => $value) {

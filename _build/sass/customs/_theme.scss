@@ -2,6 +2,17 @@ html,body {
 	height:100%; 
 } 
 
+#go-up{
+	.btn{
+		padding: 4px 5px;
+	}
+	svg{
+		@include rotate(90deg);
+		width: 20px;
+		height: auto; 
+	}
+}
+
 .icon_svg{
 	display: inline-block;
 	svg{
@@ -123,12 +134,25 @@ html,body {
 
 .azar-composition-slider-mini{
 	.w-20{ 
-		flex: 0 0 20%;
-    max-width: 20%;
+		flex: 0 0 33.333333%;
+    max-width: 33.333333%;
 	}
 	.w-40{
-		flex: 0 0 40%;
-    max-width: 40%;
+		flex: 0 0 100%;
+    max-width: 100%;
+    margin-top:20px;
+	}
+
+	@include breakpoint(sm){
+		.w-20{ 
+			flex: 0 0 20%;
+	    max-width: 20%;
+		}
+		.w-40{
+			margin-top:0;
+			flex: 0 0 40%;
+	    max-width: 40%;
+		}
 	}
 
 	.even{
@@ -321,7 +345,7 @@ body.scrolling-mainHeader{
 	.azar-slide-description,
 	.azar-slide-year{
 
-		display: inline-block;
+		display: none; // NOT USED
 		color: #fff;
 		position: absolute;
 		padding: 28px 24px;
