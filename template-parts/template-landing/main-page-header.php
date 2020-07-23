@@ -45,7 +45,9 @@ $acf_field = $args['acf_field'];
 				?>
 				<div class="embed-responsive embed-responsive-custom-header">
 					<div class="embed-responsive-item">
-						<div class="item-containerX lazybackground-loading lazybackground-item image-cover h-100" style="background-image: url(<?php echo $medium[0]; ?>);" data-lazybackground-src="<?php echo $full[0]; ?>"></div>
+						<?php azar_get_image_item(array(
+								'attachment_id' => $v['ID'], 
+							)); ?>
 					</div>
 				</div>
 		</div>
