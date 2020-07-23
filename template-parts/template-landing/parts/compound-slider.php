@@ -29,6 +29,8 @@
 						
 						$layout = $value['acf_fc_layout'];
 
+						$reversed = false;
+
 						if($layout=='compound-layout-1'){
 							$attachments = array(
 								array('attachment_id' => $value['compound_layout_1']['id']),
@@ -54,6 +56,7 @@
 							);
 							$label = $value['compound_layout_3_label'];
 							$year = $value['compound_layout_3_year'];
+							$reversed = $value['compound_layout_3_inverted'];
 						}
 
 						if($layout=='compound-layout-4a'){
@@ -65,6 +68,7 @@
 							);
 							$label = $value['compound_layout_4a_label'];
 							$year = $value['compound_layout_4a_year'];
+							$reversed = $value['compound_layout_4a_inverted'];
 						}
 
 						if($layout=='compound-layout-4b'){
@@ -76,6 +80,7 @@
 							);
 							$label = $value['compound_layout_4b_label'];
 							$year = $value['compound_layout_4b_year'];
+							$reversed = $value['compound_layout_4b_inverted'];
 						}
 
 						$item_class = '';
@@ -99,6 +104,7 @@
 								
 								
 								$part_args = array(
+									'reversed' => $reversed,
 									'count' => $count,
 				        	'hide_prev' => $hide_prev,
 				        	'hide_next' => $hide_next,

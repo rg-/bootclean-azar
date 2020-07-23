@@ -234,9 +234,19 @@ function azar_layouts($prefix=''){
 				array(
 					'name'=> 'compound_layout_3_year',
 					'label'=>'Project Year', 
-					'width' => '50%', 
+					'width' => '20%', 
 				)
 			);
+
+			$layouts['layout_compound-layout-3']['sub_fields'][] = WPBC_acf_make_true_false_field(
+				array(
+					'name'=> 'compound_layout_3_inverted',
+					'label'=>'Inverted Layout?', 
+					'width' => '30%',
+					'default_value' => false, 
+				)
+			);
+
 			$layouts['layout_compound-layout-3']['sub_fields'][] = WPBC_acf_make_image_field(
 				array(
 					'name'=> 'compound_layout_3_image_1',
@@ -279,9 +289,19 @@ function azar_layouts($prefix=''){
 				array(
 					'name'=> 'compound_layout_4a_year',
 					'label'=>'Project Year', 
-					'width' => '50%', 
+					'width' => '20%', 
 				)
 			);
+
+			$layouts['layout_compound-layout-4a']['sub_fields'][] = WPBC_acf_make_true_false_field(
+				array(
+					'name'=> 'compound_layout_4a_inverted',
+					'label'=>'Inverted Layout?', 
+					'width' => '30%',
+					'default_value' => false, 
+				)
+			);
+
 			$layouts['layout_compound-layout-4a']['sub_fields'][] = WPBC_acf_make_image_field(
 				array(
 					'name'=> 'compound_layout_4a_image_1',
@@ -331,9 +351,19 @@ function azar_layouts($prefix=''){
 				array(
 					'name'=> 'compound_layout_4b_year',
 					'label'=>'Project Year', 
-					'width' => '50%', 
+					'width' => '20%', 
 				)
 			);
+
+			$layouts['layout_compound-layout-4b']['sub_fields'][] = WPBC_acf_make_true_false_field(
+				array(
+					'name'=> 'compound_layout_4b_inverted',
+					'label'=>'Inverted Layout?', 
+					'width' => '30%',
+					'default_value' => false, 
+				)
+			);
+
 			$layouts['layout_compound-layout-4b']['sub_fields'][] = WPBC_acf_make_image_field(
 				array(
 					'name'=> 'compound_layout_4b_image_1',
