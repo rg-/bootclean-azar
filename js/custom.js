@@ -108,7 +108,7 @@
 	  $( icon ).remove();
 	  $( target ).html(text);
 
-	  $( target ).find('[data-slick]').make_slick();
+	  $( target ).find('[data-slick]').make_slick(); 
 
 	  $( target ).find('[data-slick]').on('init', function(slick){  
 			slick_lazybackground($(this)); 

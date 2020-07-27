@@ -36,8 +36,7 @@ $acf_field = $args['acf_field'];
 	?>
 	
 	<div class="theme-slick-slider" data-slick='<?php echo $slick; ?>' data-breakpoint-heightX='<?php echo $slick_heights; ?>'>
-		<?php foreach($items as $k=>$v){
-			?>
+		<?php foreach($items as $k=>$v){ ?>
 		<div class="item"> 
 				<?php
 				$full = wp_get_attachment_image_src( $v['ID'], 'full', false );
