@@ -119,6 +119,13 @@
 
  	}  
 
+
+ 	/*
+
+	IMPORTANT: this was passed to core, remove from here and test if working ok.
+
+ 	*/
+
  	$('[data-slick]').on('init', function(slick){  
  		slick_lazy_beforeChange($(this)); 
 		slick_lazybackground($(this)); 

@@ -442,7 +442,7 @@ body.scrolling-mainHeader{
 			width: 25px;
 		}
 	}
-	@include breakpoint(lg){
+	@include breakpoint(xl){
 		width: 125px;
 		height: 98px;
 		svg{
@@ -467,7 +467,21 @@ body.scrolling-mainHeader{
 		left: 0;
 	}
 }
-
+.slick-arrows-holder{
+	position:absolute;
+	bottom:0;
+	left: 0;
+	right: 0;
+	z-index: 10; 
+	display: flex;
+	.slick-custom-arrow{
+		position:relative;
+		top: inherit;
+		bottom: inherit;
+		left:inherit;
+		right: inherit;
+	}
+}
 
 
 $lazybackground-item-filter: blur(24px);

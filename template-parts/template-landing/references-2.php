@@ -27,6 +27,7 @@ $slick = array(
 	'speed' => 500,
 	'autoplay' => false,
 	'autoplaySpeed' => 5200,
+	'adaptiveHeight' => true,
 );
 $slick = json_encode($slick);
 
@@ -57,8 +58,10 @@ if(!empty($acf_field['client_comments'])){
 						<p><?php echo $value['client_cite']; ?></p>
 					</div>
 					<div class="col-2">
-						<?php azar_get_slick_prev('bl'); ?><br>
-						<?php azar_get_slick_next('br'); ?>
+						<div class="slick-arrows-holder">
+							<?php azar_get_slick_prev('bl'); ?><br>
+							<?php azar_get_slick_next('br'); ?>
+						</div>
 					</div>
 				</div>
 			</div>
